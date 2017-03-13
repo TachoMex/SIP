@@ -1,0 +1,15 @@
+*.o
+*.hi
+dist/*
+*.yaml
+*.key
+*.crt
+Kreston/dist/*
+.cabal-sandbox/*
+.haskell-ghc-mod.json
+cabal.sandbox.config
+Main
+Kreston/public/components/*
+bower_components/*
+Kreston/tmp/*
+.stack-work/*

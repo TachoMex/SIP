@@ -1,0 +1,64 @@
+name:                SIP
+version:             0.1.0.0
+synopsis:            Simple Image Processing
+description:         It provides
+homepage:            https://github.com/tachomex/SIP#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Gilberto Vargas
+maintainer:          tachoguitar@gmail.com
+copyright:           2017 Gilberto Vargas
+category:            Image Processing
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     SIP.Image
+                     , SIP.Pixel.RGB
+                     , SIP.Pixel
+                     , SIP.Pixel.Colors
+                     , SIP.Storage.BMP
+                     , SIP.Pixel.Primitive.BoolPixel
+                     , SIP.Pixel.Primitive.U1V
+                     , SIP.Pixel.Primitive.U3V
+                     , SIP.Pixel.Primitive.U4V
+                     , SIP.Draw.Shapes
+
+  build-depends:       base >= 4.7 && < 5
+                     , containers
+                     , binary
+                     , bytestring
+                     , pretty-hex
+                     , split
+  default-language:    Haskell2010
+
+executable SIP-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N -O3
+  build-depends:       base
+                     , SIP
+                     , pretty-hex
+                     , bytestring
+                     , GLUT
+                     , OpenGL
+                     , binary
+                     , containers
+                     , bytestring
+
+  default-language:    Haskell2010
+
+test-suite SIP-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , SIP
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/tachomex/SIP
