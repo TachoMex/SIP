@@ -1,0 +1,10 @@
+-----------------------------------------------------------------------------
+-- |
+-- Module      :  SIP.Pixel
+-- Copyright   :  (c) Gilberto Vargas
+-- License     :  BSD3
+-- Maintainer  :  tachoguitar@gmail.com
+-- Stability   :  development
+-- Portability :  portable
+--
+--
