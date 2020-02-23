@@ -27,7 +27,7 @@ library
                      , SIP.Draw.Shapes
 
   build-depends:       base >= 4.7 && < 5
-                     , containers
+                     , containers >= 0.5.8 && < 1
                      , binary
                      , bytestring
                      , pretty-hex

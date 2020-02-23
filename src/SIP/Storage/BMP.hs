@@ -142,11 +142,11 @@ module SIP.Storage.BMP where
     return header
 
   pixelBytes :: [U3V] -> Int -> B.ByteString
-  pixelBytes pixels w = B.drop 8 . encode . intercalate padding $ map rowToBytes rows
+  pixelBytes pixels w = B.drop 8 . encode . intercalate padding $ fmap rowToBytes rows
     where
       rows = chunksOf w pixels :: [[U3V]]
       rowToBytes :: [U3V] -> [Int8]
-      rowToBytes r = join $ map writePixel r
+      rowToBytes r = join $ fmap writePixel r
       writePixel (U3V r g b) = [b', g', r']
         where
           b' = toWord b
